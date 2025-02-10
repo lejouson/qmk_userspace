@@ -242,7 +242,7 @@ bool oled_task_user(void) {
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [_DEFAULT ] = { ENCODER_CCW_CW(XXXXXXX, XXXXXXX), ENCODER_CCW_CW(KC_TAB,     S(KC_TAB) ) },
     [  _NAVI  ] = { ENCODER_CCW_CW(XXXXXXX, XXXXXXX), ENCODER_CCW_CW(C(KC_RGHT), C(KC_LEFT)) },
-    [_FUNCTION] = { ENCODER_CCW_CW(XXXXXXX, XXXXXXX), ENCODER_CCW_CW(_______,    _______   ) },
+    [_FUNCTION] = { ENCODER_CCW_CW(XXXXXXX, XXXXXXX), ENCODER_CCW_CW(KC_F3,      S(KC_F3)  ) },
     [_SYMBOLS ] = { ENCODER_CCW_CW(XXXXXXX, XXXXXXX), ENCODER_CCW_CW(_______,    _______   ) },
     [_NUMERIC ] = { ENCODER_CCW_CW(XXXXXXX, XXXXXXX), ENCODER_CCW_CW(_______,    _______   ) },
     [ _CONFIG ] = { ENCODER_CCW_CW(XXXXXXX, XXXXXXX), ENCODER_CCW_CW(_______,    _______   ) },
