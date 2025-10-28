@@ -130,9 +130,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_CONFIG]= LAYOUT(
-      _______, XXXXXXX, RGB_VAI, RGB_SAI, RGB_HUI, RGB_M_B,                                     XXXXXXX, KC_MNXT, KC_VOLU, XXXXXXX, XXXXXXX, XXXXXXX,
-      XXXXXXX, XXXXXXX, RGB_VAD, RGB_SAD, RGB_HUD, RGB_TOG,                                     XXXXXXX, KC_MPLY, KC_MUTE, XXXXXXX, XXXXXXX, QK_LLCK,
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_M_P, _______, _______, _______, _______, XXXXXXX, KC_MPRV, KC_VOLD, XXXXXXX, XXXXXXX, XXXXXXX,
+      _______, XXXXXXX, UG_VALU, UG_SATU, UG_HUEU, UG_NEXT,                                     XXXXXXX, KC_MNXT, KC_VOLU, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, UG_VALD, UG_SATD, UG_HUEU, UG_TOGG,                                     XXXXXXX, KC_MPLY, KC_MUTE, XXXXXXX, XXXXXXX, QK_LLCK,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, UG_PREV, _______, _______, _______, _______, XXXXXXX, KC_MPRV, KC_VOLD, XXXXXXX, XXXXXXX, XXXXXXX,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 // /*
