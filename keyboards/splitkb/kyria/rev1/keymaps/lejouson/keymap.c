@@ -119,11 +119,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Config
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |        |      | VAI  | SAI  | HUI  | MOD  |                              |      | Next | Vol+ |      |      |        |
+ * |        |      | VALU | SATU | HUEU | NEXT |                              |      | Next | Vol+ |      |      |        |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |      | VAD  | SAD  | HUD  | TOG  |                              |      | Play | Mute |      |      |Lay Lock|
+ * |        |      | VALD | SATD | HUED | TOGG |                              |      | Play | Mute |      |      |Lay Lock|
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |      |      |      |      | RMOD |      |      |  |      |      |      | Prev | Vol- |      |      |        |
+ * |        |      |      |      |      | PREV |      |      |  |      |      |      | Prev | Vol- |      |      |        |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
@@ -131,7 +131,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     [_CONFIG]= LAYOUT(
       _______, XXXXXXX, UG_VALU, UG_SATU, UG_HUEU, UG_NEXT,                                     XXXXXXX, KC_MNXT, KC_VOLU, XXXXXXX, XXXXXXX, XXXXXXX,
-      XXXXXXX, XXXXXXX, UG_VALD, UG_SATD, UG_HUEU, UG_TOGG,                                     XXXXXXX, KC_MPLY, KC_MUTE, XXXXXXX, XXXXXXX, QK_LLCK,
+      XXXXXXX, XXXXXXX, UG_VALD, UG_SATD, UG_HUED, UG_TOGG,                                     XXXXXXX, KC_MPLY, KC_MUTE, XXXXXXX, XXXXXXX, QK_LLCK,
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, UG_PREV, _______, _______, _______, _______, XXXXXXX, KC_MPRV, KC_VOLD, XXXXXXX, XXXXXXX, XXXXXXX,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
