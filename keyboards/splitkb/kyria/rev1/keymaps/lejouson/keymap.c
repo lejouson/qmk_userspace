@@ -112,7 +112,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_NUMERIC] = LAYOUT(
       _______, ES_6,    ES_7,    ES_8,    ES_9,    ES_0,                                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
       XXXXXXX, ES_1,    ES_2,    ES_3,    ES_4,    ES_5,                                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_LLCK,
-      XXXXXXX, KC_PSLS, ES_COLN, KC_COMM, KC_PDOT, KC_PMNS, _______, _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX,
+      XXXXXXX, KC_PSLS, ES_COLN, KC_COMM, ES_DOT,  KC_PMNS, _______, _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 /*
