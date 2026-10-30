@@ -165,23 +165,24 @@ uint8_t mod_state;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     mod_state = get_mods();
     switch (keycode) {
-        case KC_EMQM:
+        case KC_EMQM: {
+            static uint16_t registered = KC_NO;
             if (record->event.pressed) {
                 if (mod_state & MOD_MASK_SHIFT) {
                     del_mods(MOD_MASK_SHIFT);
-                    register_code16(ES_QUES);
+                    registered = ES_QUES;
+                    register_code16(registered);
                     set_mods(mod_state);
                 } else {
-                    register_code16(ES_EXLM);
+                    registered = ES_EXLM;
+                    register_code16(registered);
                 }
-            } else {
-                if (mod_state & MOD_MASK_SHIFT) {
-                    unregister_code16(ES_QUES);
-                } else {
-                    unregister_code16(ES_EXLM);
-                }
+            } else if (registered != KC_NO) {
+                unregister_code16(registered);
+                registered = KC_NO;
             }
             return false;
+        }
         default:
             return true;
     }
