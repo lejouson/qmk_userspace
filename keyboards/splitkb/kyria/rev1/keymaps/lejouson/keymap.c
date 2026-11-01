@@ -13,10 +13,6 @@ enum layers {
     _CONFIG
 };
 
-enum keycodes {
-    KC_EMQM = SAFE_RANGE
-};
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  * Default
@@ -34,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DEFAULT] = LAYOUT(
         KC_ESC,  ES_Q, ES_W, ES_E,      ES_R,    ES_T,                                                ES_Y,         ES_U,    ES_I,    ES_O,   ES_P,    ES_CCED,
         ES_MORD, ES_A, ES_S, ES_D,      ES_F,    ES_G,                                                ES_H,         ES_J,    ES_K,    ES_L,   ES_NTIL, ES_ACUT,
-        ES_IEXL, ES_Z, ES_X, ES_C,      ES_V,    ES_B,      SFT_T(KC_DEL), KC_LALT, KC_TAB,  KC_LSFT, ES_N,         ES_M,    ES_COMM, ES_DOT, ES_MINS, KC_EMQM,
+        ES_IEXL, ES_Z, ES_X, ES_C,      ES_V,    ES_B,      SFT_T(KC_DEL), KC_LALT, KC_TAB,  KC_LSFT, ES_N,         ES_M,    ES_COMM, ES_DOT, ES_MINS, KC_EXLM,
                              LSG(ES_S), KC_CAPS, MO(_NAVI), KC_BSPC,       KC_LCTL, KC_ENT,  KC_SPC,  MO(_SYMBOLS), KC_LGUI, KC_APP
     ),
 /*
@@ -160,32 +156,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 layer_state_t layer_state_set_user(layer_state_t state) {
     return update_tri_layer_state(state, _NAVI, _SYMBOLS, _CONFIG);
 }
+const key_override_t ques_override = ko_make_with_layers_negmods_and_options(MOD_MASK_SHIFT, ES_EXLM, ES_QUES, ~0, 0, ko_options_default | ko_option_no_reregister_trigger);
 
-uint8_t mod_state;
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    mod_state = get_mods();
-    switch (keycode) {
-        case KC_EMQM:
-            if (record->event.pressed) {
-                if (mod_state & MOD_MASK_SHIFT) {
-                    del_mods(MOD_MASK_SHIFT);
-                    register_code16(ES_QUES);
-                    set_mods(mod_state);
-                } else {
-                    register_code16(ES_EXLM);
-                }
-            } else {
-                if (mod_state & MOD_MASK_SHIFT) {
-                    unregister_code16(ES_QUES);
-                } else {
-                    unregister_code16(ES_EXLM);
-                }
-            }
-            return false;
-        default:
-            return true;
-    }
-}
+const key_override_t *key_overrides[] = {
+    &ques_override,
+};
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_180; }
